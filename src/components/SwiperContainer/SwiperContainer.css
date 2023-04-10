@@ -1,0 +1,7 @@
+.btn-swiper{
+    @apply bg-gray-200 py-3 px-6 rounded-full font-bold text-gray-600 
+}
+
+.btn-swiper:hover{
+    @apply bg-gray-600 py-3 px-6 rounded-full font-bold text-gray-200 
+}

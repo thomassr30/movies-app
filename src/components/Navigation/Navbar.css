@@ -1,0 +1,7 @@
+.index{
+    z-index: 9999;
+}
+
+.nav-item{
+    @apply  ml-12 text-white font-semibold cursor-pointer
+}

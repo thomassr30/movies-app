@@ -1,0 +1,22 @@
+
+body::-webkit-scrollbar{
+    width: 10px;
+    background: rgba(255, 255, 255, .2);
+}
+
+body::-webkit-scrollbar-thumb{
+    background: blueviolet;
+    border-radius: 28px;
+    border-right: 2px solid;
+}
+
+.scrollbar::-webkit-scrollbar{
+    width: 10px;
+    background: rgba(255, 255, 255, .2);
+}
+
+.scrollbar::-webkit-scrollbar-thumb{
+    background: blueviolet;
+    border-radius: 28px;
+    border-right: 2px solid;
+}
