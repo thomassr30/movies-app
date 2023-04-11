@@ -24,7 +24,7 @@ export const SwiperContainer = ({ movie }: Props) => {
     <>
       <Swiper pagination={true} modules={[Pagination]}>
         {movie.map((item, index) => {
-          if (index < 3) {
+          if (index < 6) {
             return (
               <SwiperSlide key={item.id}>
                 <div
