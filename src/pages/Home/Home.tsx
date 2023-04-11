@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import SwiperContainer from "../../components/SwiperContainer";
-import InfiniteScroll from "react-infinite-scroll-component";
 import { useMovies } from "../../hooks/useMovies";
 import "./Home.css";
 import { Movie } from "../../interfaces/IMovies.interface";
@@ -9,18 +8,19 @@ import apiConfig from "../../api/apiConfig";
 import DividerText from "../../components/DividerText";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useVisible } from "../../hooks/useVisible";
-import Poster from "../../components/skeleton/poster";
 import { usePopularMovie } from "../../hooks/usePopularMovie";
 
 const Home = () => {
-  const visorRef = useRef() as React.MutableRefObject<HTMLDivElement>;
+  const visorRef = useRef(
+    null
+  ) as React.MutableRefObject<HTMLDivElement | null>;
   const { visible } = useVisible({ visorRef });
   const [page, setpage] = useState(1);
 
   const changePage = useCallback(() => setpage((prev) => prev + 1), []);
 
-  const { nowPlaying, fetchMovies } = useMovies();
-  const { popularMovies } = usePopularMovie();
+  const { nowPlaying } = useMovies();
+  const { popularMovies, fetchPopularMovies } = usePopularMovie();
 
   const navigate = useNavigate();
   const navigateMovie = (movie: Movie) => {
@@ -35,7 +35,7 @@ const Home = () => {
 
   useEffect(() => {
     if (visible) {
-      fetchMovies(page);
+      fetchPopularMovies(page);
     }
   }, [page]);
 
@@ -58,9 +58,6 @@ const Home = () => {
               />
             );
           })}
-          <div className="w-12" ref={visorRef}>
-            1
-          </div>
         </div>
       </div>
 
@@ -82,7 +79,7 @@ const Home = () => {
               </div>
             );
           })}
-          <div className="w-12" ref={visorRef}></div>
+          <div className="w-full" ref={visorRef}></div>
         </div>
       </section>
     </>

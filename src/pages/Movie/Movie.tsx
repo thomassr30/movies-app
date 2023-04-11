@@ -92,7 +92,7 @@ export const Movie = () => {
                   <img
                     key={index}
                     src={apiConfig.urlPath + item.profile_path}
-                    className="w-60 cursor-pointer"
+                    className="w-32 cursor-pointer"
                   />
                 );
               }
