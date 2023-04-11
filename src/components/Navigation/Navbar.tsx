@@ -24,9 +24,9 @@ export const Navbar = () => {
             ))}
           </ul>
         </div>
-        <div className="invisible lg:visible flex items-center w-1/2 justify-end">
+        {/* <div className="invisible lg:visible flex items-center w-1/2 justify-end">
           <FaSearch className=" text-xl text-white cursor-pointer mr-5" />
-        </div>
+        </div> */}
       </div>
     </nav>
   );
