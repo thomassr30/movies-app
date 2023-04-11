@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import apiConfig from "../api/apiConfig";
 import { IResponseData, Movie } from "../interfaces/IMovies.interface";
 import axios from "axios";
@@ -26,5 +26,6 @@ export const usePopularMovie = () => {
 
   return {
     popularMovies,
+    fetchPopularMovies,
   };
 };
